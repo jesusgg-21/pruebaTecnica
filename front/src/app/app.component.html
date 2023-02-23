@@ -1,0 +1,27 @@
+<div class="">
+  <a class="navbar-brand" href="#">
+    <img src="assets/banco.jpg" alt="Banco" width="200px">
+  </a>
+</div>
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#cliente" routerLink="/cliente">Clientes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#cuenta" routerLink="/cuenta">Cuentas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#movimiento" routerLink="/movimiento">Movimientos</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+   
+<div class="container p-5 fullw">
+    <router-outlet></router-outlet>
+</div>

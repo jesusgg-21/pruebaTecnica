@@ -1,0 +1,34 @@
+<div >
+    <h2>Movimientos</h2>
+    <div class="container float-left">
+        <input class="form-control" type="text" name="search" 
+        [(ngModel)]="searchText" autocomplete="on" placeholder=" Buscar  ">
+
+    </div>
+    <div class="container float-rig">
+        <button class="btnAmarillo">Nuevo</button>
+    </div>
+
+</div>
+<div class="result">
+    <table class="table" id="datatableexample">
+        <thead>
+          <tr>
+            <th>Numero de Cuenta</th>
+            <th>Tipo</th>
+            <th>Saldo Inicial</th>
+            <th>Estado</th>
+            <th>Movimiento</th>
+          </tr>
+        </thead>
+        <tbody>
+         <tr *ngFor="let mov of movimientos | filter:searchText" style="text-align: center;">
+               <td>{{mov.numeroCuenta}}</td>
+               <td>{{mov.tipoCuenta}}</td>
+               <td>{{mov.saldoInicial}}</td>
+               <td>{{mov.estado}}</td>
+               <td>{{mov.tipoMovimiento}} de {{mov.saldo}}</td>
+           </tr>
+        </tbody>
+      </table>
+</div>

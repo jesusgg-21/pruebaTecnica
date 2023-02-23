@@ -1,0 +1,76 @@
+/* You can add global styles to this file, and also import other style files */
+ul{
+    list-style: none;
+}
+ul li {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.container{
+    display: inline-block;
+}
+
+.p-5{
+    padding: 5%;
+    position: absolute;
+}
+
+.fullw{
+    width: 60%;
+}
+
+.float-left{
+    float: left;
+}
+
+.float-rig{
+    float: right;
+}
+.result{
+    margin-top: 45px;
+    display: grid;
+    position: absolute;
+    width: 85%;
+}
+.btnAmarillo{
+    background: rgb(238, 178, 26);
+    color: rgb(97, 99, 100);
+    border: none;
+    padding: 5px 25px;
+    border-radius: 5px;
+}
+.btnAmarillo:hover{
+    background: rgb(192, 143, 17);
+    color: rgb(228, 228, 228);
+    text-decoration: solid;    
+    border: none;
+    padding: 5px 25px;
+    border-radius: 5px;
+}
+
+.table{
+    padding: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: gray;
+    border-collapse: collapse;
+}
+thead {
+    background-color: #858585;
+    color: rgb(255, 255, 255);
+}
+tbody tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #e4e4e4;
+}
+tr {
+    border-width: 1px;
+    border-style: solid;
+    border-color: gray;
+    border-collapse: collapse;
+    padding: 5px;
+}

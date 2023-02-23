@@ -1,0 +1,34 @@
+<div >
+    <h2>Cliente</h2>
+    <div class="container float-left">
+        <input class="form-control" type="text" name="search" 
+        [(ngModel)]="searchText" autocomplete="on" placeholder=" Buscar  ">
+
+    </div>
+    <div class="container float-rig">
+        <button class="btnAmarillo">Nuevo</button>
+    </div>
+
+</div>
+<div class="result">
+    <table class="table" id="datatableexample">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Dirección</th>
+            <th>Telefono</th>
+            <th>Contraseña</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+         <tr *ngFor="let cli of clientes | filter:searchText" style="text-align: center;">
+               <td>{{cli.nombre}}</td>
+               <td>{{cli.direccion}}</td>
+               <td>{{cli.telefono}}</td>
+               <td>{{cli.contrasenia}}</td>
+               <td>{{cli.estado}}</td>
+           </tr>
+        </tbody>
+      </table>
+</div>

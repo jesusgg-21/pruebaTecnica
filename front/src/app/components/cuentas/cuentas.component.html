@@ -1,0 +1,68 @@
+<div >
+    <h2>Cuentas</h2>
+    <div class="container float-left">
+        <input class="form-control" type="text" name="search" 
+        [(ngModel)]="searchText" autocomplete="on" placeholder=" Buscar  ">
+
+    </div>
+    <div class="container float-rig">
+        <button class="btnAmarillo"
+        (click)="verForm()" clickable>Nuevo</button>
+    </div>
+
+</div>
+<div *ngIf="verFormulario" style="margin-top: 55px;">
+  <form [formGroup]="cuentaForm" (ngSubmit)="onSubmit()">
+ 
+    <p>
+      <label for="firstname">Numero de Cuenta </label>
+      <input type="text" id="numCuenta" name="numCuenta" formControlName="numCuenta" [ngModel]="numcuenta">
+    </p>
+   
+    <p>
+      <label for="lastname">Tipo de Cuenta </label>
+      <input type="text" id="tipoCuenta" name="tipoCuenta" formControlName="tipoCuenta">
+    </p>
+    <p>
+      <label for="lastname">Saldo Inicial</label>
+      <input type="text" id="saldoInicialCuenta" name="saldoInicialCuenta" formControlName="saldoInicialCuenta">
+    </p>
+    <p>
+      <label for="lastname">Estado</label>
+      <input type="text" id="estadoCuenta" name="estadoCuenta" formControlName="estadoCuenta">
+    </p>
+    <p>
+      <label for="country">Cliente </label>
+      <select id="cliente" name="cliente" formControlName="cliente" [(ngModel)]="clienteSelected">
+        <option *ngFor="let cli of clientes" [value]="cli.clienteId">{{cli.nombre}}</option>
+      </select>
+    </p>
+    
+    <p>
+      <button type="submit">Guardar</button>
+    </p>
+   
+  </form>
+</div>
+<div class="result">
+    <table class="table" id="datatableexample">
+        <thead>
+          <tr>
+            <th>Número de Cuenta</th>
+            <th>Tipo de Cuenta</th>
+            <th>Saldo Inicial</th>
+            <th>Estado</th>
+            <th>Cliente</th>
+          </tr>
+        </thead>
+        <tbody>
+         <tr *ngFor="let cli of cuentas | filter:searchText" style="text-align: center;">
+               <td>{{cli.numeroCuenta}}</td>
+               <td>{{cli.tipoCuenta}}</td>
+               <td>{{cli.saldoInicial}}</td>
+               <td>{{cli.estado}}</td>
+               <td>{{cli.nombre}}</td>
+           </tr>
+        </tbody>
+      </table>
+</div>
