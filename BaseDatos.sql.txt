@@ -1,0 +1,76 @@
+
+CREATE SCHEMA public AUTHORIZATION postgres;
+
+CREATE TABLE public.persona (
+	id_persona int8 NOT NULL,
+	direccion varchar(255) NULL,
+	edad varchar(255) NULL,
+	genero varchar(255) NULL,
+	identificacion varchar(255) NULL,
+	nombre varchar(255) NULL,
+	telefono varchar(255) NULL,
+	CONSTRAINT persona_pkey PRIMARY KEY (id_persona)
+);
+
+INSERT INTO public.persona(id_persona, direccion, edad, genero, identificacion, nombre, telefono)
+VALUES(1, 'Otavalo sn y principal', '37', 'M', 'x', 'Jose Lema', '098254785');
+INSERT INTO public.persona(id_persona, direccion, edad, genero, identificacion, nombre, telefono)
+VALUES(2, 'Amazonas y  NNUU', '46', 'F', 'x', 'Marianela Montalvo', '097548965');
+INSERT INTO public.persona(id_persona, direccion, edad, genero, identificacion, nombre, telefono)
+VALUES(3, '13 junio y Equinoccial', '61', 'M', 'x', 'Juan Osorio', '098874587');
+
+
+CREATE TABLE public.cliente (
+	cliente_id int8 NOT NULL,
+	contrasenia varchar(255) NULL,
+	estado bool NULL,
+	persona_id int8 NULL,
+	CONSTRAINT cliente_pkey PRIMARY KEY (cliente_id)
+);
+
+INSERT INTO public.cliente(cliente_id, contrasenia, estado, persona_id)
+VALUES(1, '1234', true, 1);
+INSERT INTO public.cliente(cliente_id, contrasenia, estado, persona_id)
+VALUES(2, '5678', true, 2);
+INSERT INTO public.cliente(cliente_id, contrasenia, estado, persona_id)
+VALUES(3, '1245', true, 3);
+
+
+CREATE TABLE public.cuenta (
+	cuenta_id int8 NOT NULL,
+	estado bool NULL,
+	numero_cuenta varchar(255) NULL,
+	saldo_inicial float4 NULL,
+	tipo_cuenta varchar(255) NULL,
+	clienteid int8 NULL,
+	CONSTRAINT cuenta_pkey PRIMARY KEY (cuenta_id)
+);
+INSERT INTO public.cuenta(cuenta_id, estado, numero_cuenta, saldo_inicial, tipo_cuenta, clienteid)
+VALUES(1, true, '478758', 2000.0, 'Ahorro', 1);
+INSERT INTO public.cuenta(cuenta_id, estado, numero_cuenta, saldo_inicial, tipo_cuenta, clienteid)
+VALUES(2, true, '225487', 100.0, 'Corriente', 2);
+INSERT INTO public.cuenta(cuenta_id, estado, numero_cuenta, saldo_inicial, tipo_cuenta, clienteid)
+VALUES(3, true, '495878', 0.0, 'Ahorros', 3);
+INSERT INTO public.cuenta(cuenta_id, estado, numero_cuenta, saldo_inicial, tipo_cuenta, clienteid)
+VALUES(4, true, '496825', 540.0, 'Ahorros', 2);
+
+
+
+CREATE TABLE public.movimiento (
+	movimiento_id int8 NOT NULL,
+	cuenta_id int8 NULL,
+	estado bool NULL,
+	fecha date NULL,
+	saldo_inicial float4 NULL,
+	tipo_movimiento varchar(255) NULL,
+	CONSTRAINT movimiento_pkey PRIMARY KEY (movimiento_id)
+);
+
+INSERT INTO public.movimiento(movimiento_id, cuenta_id, estado, fecha, saldo_inicial, tipo_movimiento)
+VALUES(1, 1, true, '2022-12-11', 575.0, 'Retiro');
+INSERT INTO public.movimiento(movimiento_id, cuenta_id, estado, fecha, saldo_inicial, tipo_movimiento)
+VALUES(2, 2, true, '2022-12-11', 600.0, 'Depósito');
+INSERT INTO public.movimiento(movimiento_id, cuenta_id, estado, fecha, saldo_inicial, tipo_movimiento)
+VALUES(3, 3, true, '2022-12-11', 150.0, 'Depósito');
+INSERT INTO public.movimiento(movimiento_id, cuenta_id, estado, fecha, saldo_inicial, tipo_movimiento)
+VALUES(4, 4, true, '2022-12-11', 540.0, 'Retiro');

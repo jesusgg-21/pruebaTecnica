@@ -1,0 +1,131 @@
+se decide dividir cada propiedad (bean) por servicio expuesto y al igual con un puerto diferente, simulando entornos diferentes de red
+
+localhost:8010/persona
+[
+    {
+        "idPersona": 1,
+        "nombre": "Jose Lema",
+        "genero": "M",
+        "edad": "37",
+        "identificacion": "x",
+        "direccion": "Otavalo sn y principal",
+        "telefono": "098254785"
+    },
+    {
+        "idPersona": 2,
+        "nombre": "Marianela Montalvo",
+        "genero": "F",
+        "edad": "46",
+        "identificacion": "x",
+        "direccion": "Amazonas y  NNUU",
+        "telefono": "097548965"
+    },
+    {
+        "idPersona": 3,
+        "nombre": "Juan Osorio",
+        "genero": "M",
+        "edad": "61",
+        "identificacion": "x",
+        "direccion": "13 junio y Equinoccial",
+        "telefono": "098874587"
+    }
+]
+
+________________________________
+
+localhost:8011/cliente
+[
+    {
+        "clienteId": 1,
+        "contrasenia": "1234",
+        "estado": true,
+        "personaId": 1
+    },
+    {
+        "clienteId": 2,
+        "contrasenia": "5678",
+        "estado": true,
+        "personaId": 2
+    },
+    {
+        "clienteId": 3,
+        "contrasenia": "1245",
+        "estado": true,
+        "personaId": 3
+    }
+]
+________________________________
+
+localhost:8012/cuenta
+[
+    {
+        "cuentaId": 1,
+        "numeroCuenta": "478758",
+        "tipoCuenta": "Ahorro",
+        "saldoInicial": 2000.0,
+        "estado": true,
+        "clienteID": 1
+    },
+    {
+        "cuentaId": 2,
+        "numeroCuenta": "225487",
+        "tipoCuenta": "Corriente",
+        "saldoInicial": 100.0,
+        "estado": true,
+        "clienteID": 2
+    },
+    {
+        "cuentaId": 3,
+        "numeroCuenta": "495878",
+        "tipoCuenta": "Ahorros",
+        "saldoInicial": 0.0,
+        "estado": true,
+        "clienteID": 3
+    },
+    {
+        "cuentaId": 4,
+        "numeroCuenta": "496825",
+        "tipoCuenta": "Ahorros",
+        "saldoInicial": 540.0,
+        "estado": true,
+        "clienteID": 2
+    }
+]
+________________________________
+
+localhost:8013/movimiento
+[
+    {
+        "movimientoId": 1,
+        "fecha": "2022-12-11",
+        "tipoMovimiento": "Retiro",
+        "saldoInicial": 575.0,
+        "estado": true,
+        "cuentaId": 1
+    },
+    {
+        "movimientoId": 2,
+        "fecha": "2022-12-11",
+        "tipoMovimiento": "Depósito",
+        "saldoInicial": 600.0,
+        "estado": true,
+        "cuentaId": 2
+    },
+    {
+        "movimientoId": 3,
+        "fecha": "2022-12-11",
+        "tipoMovimiento": "Depósito",
+        "saldoInicial": 150.0,
+        "estado": true,
+        "cuentaId": 3
+    },
+    {
+        "movimientoId": 4,
+        "fecha": "2022-12-11",
+        "tipoMovimiento": "Retiro",
+        "saldoInicial": 540.0,
+        "estado": true,
+        "cuentaId": 4
+    }
+]
+________________________________
